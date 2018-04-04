@@ -27,6 +27,8 @@ async function start() {
          options: swaggerOptions
       }, {
          plugin: require('./plugins/blogs-plugin')
+      }, {
+         plugin: require('./plugins/user-plugin')
       },
    ]);
 

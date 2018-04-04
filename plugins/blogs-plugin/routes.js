@@ -16,6 +16,7 @@ const Routes = [{
    method: 'POST',
    path: '/api/blogs',
    options: {
+      auth: 'jwt',
       description: 'Add blogs',
       notes: 'Returns a blog which is added.',
       tags: ['api'],
@@ -25,7 +26,7 @@ const Routes = [{
             description: Joi.string().required()
          }
       },
-      handler: Handlers.addBlogs,
+      handler: Handlers.addBlogs
    }
 }, {
    method: 'GET',
@@ -45,6 +46,7 @@ const Routes = [{
    method: 'PUT',
    path: '/api/blogs/{id}',
    options: {
+      auth: 'jwt',
       description: 'Update blogs',
       notes: 'Returns a updated blog.',
       tags: ['api'],
@@ -63,6 +65,7 @@ const Routes = [{
    method: 'DELETE',
    path: '/api/blogs/{id}',
    options: {
+      auth: 'jwt',
       description: 'Delete blogs',
       notes: 'Returns a deleteBlog By id ',
       tags: ['api'],

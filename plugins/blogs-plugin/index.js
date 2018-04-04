@@ -1,8 +1,11 @@
-'use strict'
+'use strict';
 
 const Routes = require('./routes')
 
 function register(server, options) {
+
+
+   server.register(require('../../authentication'));
 
    server.route(Routes);
    server.log('info', 'Plugin registered: blog Plugin')
