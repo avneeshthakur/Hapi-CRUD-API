@@ -6,7 +6,10 @@ const HapiSwagger = require('hapi-swagger');
 
 const server = new Hapi.Server({
    host: "localhost",
-   port: 4000
+   port: 4000,
+   routes: {
+      "cors": true
+   }
 });
 
 const db = require('./database').db;

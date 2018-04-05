@@ -12,6 +12,7 @@
     }
     if (blogs) {
        return h.response({
+          "status": true,
           "message": "All Blogs",
           blogs
        }).code(200);
@@ -28,16 +29,19 @@
        var data = await newblog.save()
     } catch (err) {
        return h.response({
+          "status": false,
           "Error": err.message
        }).code(500);
     }
     if (data) {
        return h.response({
+          "status": true,
           "message": "Blog Created Successfuly.",
           data
        }).code(201);
     } else {
        return h.response({
+          "status": false,
           "message": "No Data Found"
        }).code(200);
     }
@@ -52,17 +56,20 @@
        });
     } catch (err) {
        return h.response({
+          "status": false,
           "Error": err.message
        }).code(500);
     }
 
     if (blog) {
        return h.response({
+          "status": true,
           "message": `Blog Data with id ${_id}`,
           blog
        }).code(200);
     } else {
        return h.response({
+          "status": false,
           "message": "No Data Found"
        }).code(200);
     }
@@ -82,16 +89,19 @@
           });
     } catch (err) {
        return h.response({
+          "status": false,
           "Error": err.message
        }).code(500);
     }
     if (blog) {
        return h.response({
+          "status": true,
           "message": "Blog Updated Successfuly.",
           blog
        }).code(200);
     } else {
        return h.response({
+          "status": false,
           "message": "No Data Found"
        }).code(200);
     }
@@ -111,15 +121,16 @@
     }
     if (blog) {
        return h.response({
+          "status": true,
           "message": "Blog Deleted Successfuly.",
           blog
        }).code(200);
     } else {
        return h.response({
+          "status": false,
           "message": "No Data Found"
        }).code(200);
     }
-
  }
 
 
